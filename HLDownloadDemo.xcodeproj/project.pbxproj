@@ -7,15 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94540F18B65A6BE4B26134F8 /* libPods-HLDownloadDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 125ED912C6F59039370A6DC3 /* libPods-HLDownloadDemo.a */; };
 		C774768620DB4B320085C386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C774768520DB4B320085C386 /* AppDelegate.m */; };
 		C774768920DB4B320085C386 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C774768820DB4B320085C386 /* ViewController.m */; };
 		C774768C20DB4B320085C386 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C774768A20DB4B320085C386 /* Main.storyboard */; };
 		C774768E20DB4B330085C386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C774768D20DB4B330085C386 /* Assets.xcassets */; };
 		C774769120DB4B330085C386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C774768F20DB4B330085C386 /* LaunchScreen.storyboard */; };
 		C774769420DB4B330085C386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C774769320DB4B330085C386 /* main.m */; };
+		C77476A320DB4B600085C386 /* HLDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = C77476A120DB4B600085C386 /* HLDownload.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77476A620DB4B600085C386 /* HLDownload.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C774769F20DB4B600085C386 /* HLDownload.framework */; };
+		C77476A720DB4B600085C386 /* HLDownload.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C774769F20DB4B600085C386 /* HLDownload.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C77477C720DBA7550085C386 /* HLM3U8List.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477B920DBA7550085C386 /* HLM3U8List.m */; };
+		C77477C820DBA7550085C386 /* HLM3U8SegmentInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477BA20DBA7550085C386 /* HLM3U8SegmentInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77477C920DBA7550085C386 /* HLM3U8Praser.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477BB20DBA7550085C386 /* HLM3U8Praser.m */; };
+		C77477CA20DBA7550085C386 /* HLM3U8List.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477BC20DBA7550085C386 /* HLM3U8List.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77477CB20DBA7550085C386 /* HLM3U8Praser.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477BD20DBA7550085C386 /* HLM3U8Praser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77477CC20DBA7550085C386 /* HLM3U8SegmentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477BE20DBA7550085C386 /* HLM3U8SegmentInfo.m */; };
+		C77477CD20DBA7550085C386 /* HLDownloadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477C020DBA7550085C386 /* HLDownloadDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77477CE20DBA7550085C386 /* HLSegmentProgresser.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477C120DBA7550085C386 /* HLSegmentProgresser.m */; };
+		C77477CF20DBA7550085C386 /* HLSegmentDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477C220DBA7550085C386 /* HLSegmentDownLoader.m */; };
+		C77477D020DBA7550085C386 /* HLDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477C320DBA7550085C386 /* HLDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77477D120DBA7550085C386 /* HLSegmentProgresser.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477C420DBA7550085C386 /* HLSegmentProgresser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77477D220DBA7550085C386 /* HLDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477C520DBA7550085C386 /* HLDownLoader.m */; };
+		C77477D320DBA7550085C386 /* HLSegmentDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477C620DBA7550085C386 /* HLSegmentDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77477E220DBAB320085C386 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477E020DBAB320085C386 /* NSData+Additions.m */; };
+		C77477E320DBAB320085C386 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477E120DBAB320085C386 /* NSString+Extend.m */; };
+		C77477E620DBAF290085C386 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77477E520DBAF290085C386 /* AVFoundation.framework */; };
+		C77477E920DCD3440085C386 /* HLDownloaderCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477E720DCD3440085C386 /* HLDownloaderCenter.h */; };
+		C77477EA20DCD3440085C386 /* HLDownloaderCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477E820DCD3440085C386 /* HLDownloaderCenter.m */; };
+		F677A2BC0FD2BA29D45C2C7C /* libPods-HLDownload.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB290C98FA8A9C191B93D971 /* libPods-HLDownload.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C77476A420DB4B600085C386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C774767920DB4B320085C386 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C774769E20DB4B600085C386;
+			remoteInfo = HLDownload;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C77476AB20DB4B600085C386 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C77476A720DB4B600085C386 /* HLDownload.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		125ED912C6F59039370A6DC3 /* libPods-HLDownloadDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HLDownloadDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3433A2455B791360A6447114 /* Pods-HLDownloadDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLDownloadDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLDownloadDemo/Pods-HLDownloadDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AE6F382783FC8A17A0A07472 /* Pods-HLDownloadDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLDownloadDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLDownloadDemo/Pods-HLDownloadDemo.release.xcconfig"; sourceTree = "<group>"; };
+		BB8FF0671DBD338748DD2B33 /* Pods-HLDownload.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLDownload.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLDownload/Pods-HLDownload.release.xcconfig"; sourceTree = "<group>"; };
 		C774768120DB4B320085C386 /* HLDownloadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLDownloadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C774768420DB4B320085C386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C774768520DB4B320085C386 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +77,31 @@
 		C774769020DB4B330085C386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C774769220DB4B330085C386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C774769320DB4B330085C386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C774769F20DB4B600085C386 /* HLDownload.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HLDownload.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C77476A120DB4B600085C386 /* HLDownload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLDownload.h; sourceTree = "<group>"; };
+		C77476A220DB4B600085C386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C77477B920DBA7550085C386 /* HLM3U8List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLM3U8List.m; sourceTree = "<group>"; };
+		C77477BA20DBA7550085C386 /* HLM3U8SegmentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLM3U8SegmentInfo.h; sourceTree = "<group>"; };
+		C77477BB20DBA7550085C386 /* HLM3U8Praser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLM3U8Praser.m; sourceTree = "<group>"; };
+		C77477BC20DBA7550085C386 /* HLM3U8List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLM3U8List.h; sourceTree = "<group>"; };
+		C77477BD20DBA7550085C386 /* HLM3U8Praser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLM3U8Praser.h; sourceTree = "<group>"; };
+		C77477BE20DBA7550085C386 /* HLM3U8SegmentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLM3U8SegmentInfo.m; sourceTree = "<group>"; };
+		C77477C020DBA7550085C386 /* HLDownloadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDownloadDelegate.h; sourceTree = "<group>"; };
+		C77477C120DBA7550085C386 /* HLSegmentProgresser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSegmentProgresser.m; sourceTree = "<group>"; };
+		C77477C220DBA7550085C386 /* HLSegmentDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSegmentDownLoader.m; sourceTree = "<group>"; };
+		C77477C320DBA7550085C386 /* HLDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDownLoader.h; sourceTree = "<group>"; };
+		C77477C420DBA7550085C386 /* HLSegmentProgresser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSegmentProgresser.h; sourceTree = "<group>"; };
+		C77477C520DBA7550085C386 /* HLDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLDownLoader.m; sourceTree = "<group>"; };
+		C77477C620DBA7550085C386 /* HLSegmentDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSegmentDownLoader.h; sourceTree = "<group>"; };
+		C77477DE20DBAB320085C386 /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Additions.h"; sourceTree = "<group>"; };
+		C77477DF20DBAB320085C386 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
+		C77477E020DBAB320085C386 /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Additions.m"; sourceTree = "<group>"; };
+		C77477E120DBAB320085C386 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
+		C77477E520DBAF290085C386 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C77477E720DCD3440085C386 /* HLDownloaderCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLDownloaderCenter.h; sourceTree = "<group>"; };
+		C77477E820DCD3440085C386 /* HLDownloaderCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLDownloaderCenter.m; sourceTree = "<group>"; };
+		D2F6FAF823B7515FC3AC0F2F /* Pods-HLDownload.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLDownload.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLDownload/Pods-HLDownload.debug.xcconfig"; sourceTree = "<group>"; };
+		DB290C98FA8A9C191B93D971 /* libPods-HLDownload.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HLDownload.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +109,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77477E620DBAF290085C386 /* AVFoundation.framework in Frameworks */,
+				C77476A620DB4B600085C386 /* HLDownload.framework in Frameworks */,
+				94540F18B65A6BE4B26134F8 /* libPods-HLDownloadDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C774769B20DB4B600085C386 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F677A2BC0FD2BA29D45C2C7C /* libPods-HLDownload.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				C774768320DB4B320085C386 /* HLDownloadDemo */,
+				C77476A020DB4B600085C386 /* HLDownload */,
 				C774768220DB4B320085C386 /* Products */,
+				C77477E420DBAF290085C386 /* Frameworks */,
+				F42EE8FAC4AFE07B0912A815 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				C774768120DB4B320085C386 /* HLDownloadDemo.app */,
+				C774769F20DB4B600085C386 /* HLDownload.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,29 +158,143 @@
 				C774768F20DB4B330085C386 /* LaunchScreen.storyboard */,
 				C774769220DB4B330085C386 /* Info.plist */,
 				C774769320DB4B330085C386 /* main.m */,
+				C77477DD20DBAB320085C386 /* Additions */,
 			);
 			path = HLDownloadDemo;
 			sourceTree = "<group>";
 		};
+		C77476A020DB4B600085C386 /* HLDownload */ = {
+			isa = PBXGroup;
+			children = (
+				C77477BF20DBA7550085C386 /* Download */,
+				C77477B820DBA7550085C386 /* HLM3u8Praser */,
+				C77476A120DB4B600085C386 /* HLDownload.h */,
+				C77476A220DB4B600085C386 /* Info.plist */,
+			);
+			path = HLDownload;
+			sourceTree = "<group>";
+		};
+		C77477B820DBA7550085C386 /* HLM3u8Praser */ = {
+			isa = PBXGroup;
+			children = (
+				C77477BD20DBA7550085C386 /* HLM3U8Praser.h */,
+				C77477BB20DBA7550085C386 /* HLM3U8Praser.m */,
+				C77477BC20DBA7550085C386 /* HLM3U8List.h */,
+				C77477B920DBA7550085C386 /* HLM3U8List.m */,
+				C77477BA20DBA7550085C386 /* HLM3U8SegmentInfo.h */,
+				C77477BE20DBA7550085C386 /* HLM3U8SegmentInfo.m */,
+			);
+			path = HLM3u8Praser;
+			sourceTree = "<group>";
+		};
+		C77477BF20DBA7550085C386 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				C77477C020DBA7550085C386 /* HLDownloadDelegate.h */,
+				C77477C620DBA7550085C386 /* HLSegmentDownLoader.h */,
+				C77477C220DBA7550085C386 /* HLSegmentDownLoader.m */,
+				C77477C420DBA7550085C386 /* HLSegmentProgresser.h */,
+				C77477C120DBA7550085C386 /* HLSegmentProgresser.m */,
+				C77477C320DBA7550085C386 /* HLDownLoader.h */,
+				C77477C520DBA7550085C386 /* HLDownLoader.m */,
+				C77477E720DCD3440085C386 /* HLDownloaderCenter.h */,
+				C77477E820DCD3440085C386 /* HLDownloaderCenter.m */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		C77477DD20DBAB320085C386 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				C77477DE20DBAB320085C386 /* NSData+Additions.h */,
+				C77477E020DBAB320085C386 /* NSData+Additions.m */,
+				C77477DF20DBAB320085C386 /* NSString+Extend.h */,
+				C77477E120DBAB320085C386 /* NSString+Extend.m */,
+			);
+			path = Additions;
+			sourceTree = SOURCE_ROOT;
+		};
+		C77477E420DBAF290085C386 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C77477E520DBAF290085C386 /* AVFoundation.framework */,
+				DB290C98FA8A9C191B93D971 /* libPods-HLDownload.a */,
+				125ED912C6F59039370A6DC3 /* libPods-HLDownloadDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F42EE8FAC4AFE07B0912A815 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2F6FAF823B7515FC3AC0F2F /* Pods-HLDownload.debug.xcconfig */,
+				BB8FF0671DBD338748DD2B33 /* Pods-HLDownload.release.xcconfig */,
+				3433A2455B791360A6447114 /* Pods-HLDownloadDemo.debug.xcconfig */,
+				AE6F382783FC8A17A0A07472 /* Pods-HLDownloadDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C774769C20DB4B600085C386 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C77477D020DBA7550085C386 /* HLDownLoader.h in Headers */,
+				C77477CA20DBA7550085C386 /* HLM3U8List.h in Headers */,
+				C77477C820DBA7550085C386 /* HLM3U8SegmentInfo.h in Headers */,
+				C77477CD20DBA7550085C386 /* HLDownloadDelegate.h in Headers */,
+				C77477D320DBA7550085C386 /* HLSegmentDownLoader.h in Headers */,
+				C77477D120DBA7550085C386 /* HLSegmentProgresser.h in Headers */,
+				C77477CB20DBA7550085C386 /* HLM3U8Praser.h in Headers */,
+				C77476A320DB4B600085C386 /* HLDownload.h in Headers */,
+				C77477E920DCD3440085C386 /* HLDownloaderCenter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C774768020DB4B320085C386 /* HLDownloadDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C774769720DB4B330085C386 /* Build configuration list for PBXNativeTarget "HLDownloadDemo" */;
 			buildPhases = (
+				AE567C17D31457838DF36F3C /* [CP] Check Pods Manifest.lock */,
 				C774767D20DB4B320085C386 /* Sources */,
 				C774767E20DB4B320085C386 /* Frameworks */,
 				C774767F20DB4B320085C386 /* Resources */,
+				C77476AB20DB4B600085C386 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C77476A520DB4B600085C386 /* PBXTargetDependency */,
 			);
 			name = HLDownloadDemo;
 			productName = HLDownloadDemo;
 			productReference = C774768120DB4B320085C386 /* HLDownloadDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C774769E20DB4B600085C386 /* HLDownload */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C77476A820DB4B600085C386 /* Build configuration list for PBXNativeTarget "HLDownload" */;
+			buildPhases = (
+				6037EB9E98A3415F3F7A70EA /* [CP] Check Pods Manifest.lock */,
+				C774769A20DB4B600085C386 /* Sources */,
+				C774769B20DB4B600085C386 /* Frameworks */,
+				C774769C20DB4B600085C386 /* Headers */,
+				C774769D20DB4B600085C386 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HLDownload;
+			productName = HLDownload;
+			productReference = C774769F20DB4B600085C386 /* HLDownload.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +306,9 @@
 				ORGANIZATIONNAME = HL;
 				TargetAttributes = {
 					C774768020DB4B320085C386 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					C774769E20DB4B600085C386 = {
 						CreatedOnToolsVersion = 9.4;
 					};
 				};
@@ -119,6 +327,7 @@
 			projectRoot = "";
 			targets = (
 				C774768020DB4B320085C386 /* HLDownloadDemo */,
+				C774769E20DB4B600085C386 /* HLDownload */,
 			);
 		};
 /* End PBXProject section */
@@ -134,7 +343,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C774769D20DB4B600085C386 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6037EB9E98A3415F3F7A70EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HLDownload-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE567C17D31457838DF36F3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HLDownloadDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C774767D20DB4B320085C386 /* Sources */ = {
@@ -143,11 +398,35 @@
 			files = (
 				C774768920DB4B320085C386 /* ViewController.m in Sources */,
 				C774769420DB4B330085C386 /* main.m in Sources */,
+				C77477E220DBAB320085C386 /* NSData+Additions.m in Sources */,
 				C774768620DB4B320085C386 /* AppDelegate.m in Sources */,
+				C77477E320DBAB320085C386 /* NSString+Extend.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C774769A20DB4B600085C386 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C77477D220DBA7550085C386 /* HLDownLoader.m in Sources */,
+				C77477C720DBA7550085C386 /* HLM3U8List.m in Sources */,
+				C77477CC20DBA7550085C386 /* HLM3U8SegmentInfo.m in Sources */,
+				C77477EA20DCD3440085C386 /* HLDownloaderCenter.m in Sources */,
+				C77477C920DBA7550085C386 /* HLM3U8Praser.m in Sources */,
+				C77477CE20DBA7550085C386 /* HLSegmentProgresser.m in Sources */,
+				C77477CF20DBA7550085C386 /* HLSegmentDownLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C77476A520DB4B600085C386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C774769E20DB4B600085C386 /* HLDownload */;
+			targetProxy = C77476A420DB4B600085C386 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C774768A20DB4B320085C386 /* Main.storyboard */ = {
@@ -281,33 +560,99 @@
 		};
 		C774769820DB4B330085C386 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3433A2455B791360A6447114 /* Pods-HLDownloadDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M675EFBDE2;
 				INFOPLIST_FILE = HLDownloadDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhl.HLDownloadDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7d26ab73-899a-41fc-8049-26d5fcc64618";
+				PROVISIONING_PROFILE_SPECIFIER = Common_lhl_Development;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C774769920DB4B330085C386 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE6F382783FC8A17A0A07472 /* Pods-HLDownloadDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M675EFBDE2;
 				INFOPLIST_FILE = HLDownloadDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhl.HLDownloadDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7d26ab73-899a-41fc-8049-26d5fcc64618";
+				PROVISIONING_PROFILE_SPECIFIER = Common_lhl_Development;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C77476A920DB4B600085C386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2F6FAF823B7515FC3AC0F2F /* Pods-HLDownload.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HLDownload/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhl.HLDownload;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C77476AA20DB4B600085C386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB8FF0671DBD338748DD2B33 /* Pods-HLDownload.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HLDownload/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhl.HLDownload;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -328,6 +673,15 @@
 			buildConfigurations = (
 				C774769820DB4B330085C386 /* Debug */,
 				C774769920DB4B330085C386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C77476A820DB4B600085C386 /* Build configuration list for PBXNativeTarget "HLDownload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C77476A920DB4B600085C386 /* Debug */,
+				C77476AA20DB4B600085C386 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
