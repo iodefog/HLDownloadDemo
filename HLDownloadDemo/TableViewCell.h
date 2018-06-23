@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <HLDownload/HLDownload.h>
 
-@interface TableViewCell : UITableViewCell
+@interface TableViewCell : UITableViewCell<HLDownloadDelegate>
+
+@property (nonatomic, strong) HLDownLoader *object;
 
 @end

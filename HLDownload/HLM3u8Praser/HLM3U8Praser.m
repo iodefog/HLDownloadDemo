@@ -9,6 +9,7 @@
 #import "HLM3U8Praser.h"
 #import "HLM3U8SegmentInfo.h"
 #import "HLM3U8List.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation HLM3U8Praser
 
@@ -42,7 +43,7 @@
                 if ([subStr hasSuffix:@".m3u8"]) {
                     NSURL *subURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",url.URLByDeletingLastPathComponent,subStr]];
                     [self praseM3u8Url:subURL praserBlock:block];
-                    break;
+                    return;
                 }
             }
         }
@@ -122,11 +123,29 @@
     // 解析完成 一个数组 一个数组长度
     HLM3U8List * thePlaylist = [[HLM3U8List alloc] initWithSegments:segments];
     thePlaylist.totalDuration = totalDuration;
-    
+    thePlaylist.filePath = [self md5Hash:self.m3u8URL.absoluteString];
     if (block) {
         block(self.m3u8URL,thePlaylist);
     }
     
 }
+
+
+#pragma mark -
+
+- (NSString*)md5Hash:(NSString *)str
+{
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5([data bytes], (unsigned int)[data length], result);
+    
+    return [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11], result[12], result[13], result[14], result[15]
+            ];
+}
+
 
 @end

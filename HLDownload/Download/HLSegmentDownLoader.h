@@ -16,6 +16,8 @@ typedef enum
 {
     DownloadTaskStatusRunning = 0,
     DownloadTaskStatusStopped = 1,
+    DownloadTaskStatusFailure = 2,
+    DownloadTaskStatusSuccessed = 3,
 }DownloadTaskStatus;
 
 @interface HLSegmentDownLoader : NSObject<NSURLSessionDownloadDelegate>
@@ -43,7 +45,7 @@ typedef enum
 /**
  *  开始、继续
  */
-- (void)start;
+- (BOOL)start;
 - (void)resume;
 - (void)suspend;
 - (void)cancel;

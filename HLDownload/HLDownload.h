@@ -10,6 +10,7 @@
 #import <HLDownload/HLM3U8SegmentInfo.h>
 #import <HLDownload/HLM3U8List.h>
 #import <HLDownload/HLM3U8Praser.h>
+#import <HLDownload/HLDownloaderCenter.h>
 #import <HLDownload/HLDownLoader.h>
 #import <HLDownload/HLDownloadDelegate.h>
 #import <HLDownload/HLSegmentDownLoader.h>

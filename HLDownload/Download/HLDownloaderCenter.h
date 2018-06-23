@@ -9,11 +9,16 @@
 #import <Foundation/Foundation.h>
 @class HLDownLoader;
 
+
+#define HLDownLoaderTaskMAX 2
+
 @interface HLDownloaderCenter : NSObject
+
+@property(nonatomic, strong) NSMutableArray *downloadsArray;
 
 + (instancetype)shareInstanced;
 
-- (void)downloadWithM3u8URL:(NSURL *)url;
+- (void)addDownloadWithM3u8URL:(NSURL *)url completeBlock:(void (^)(void))completeBlock;
 
 
 - (void)startAll;
@@ -21,8 +26,13 @@
 - (void)resumeAll;
 - (void)cancelAll;
 
+- (void)startItemIndex:(NSUInteger)index;
+- (void)pauseItemIndex:(NSUInteger)index;
+- (void)resumeItemIndex:(NSUInteger)index;
+- (void)cancelItemIndex:(NSUInteger)index;
+
 
 - (void)removeItem:(HLDownLoader *)downloader;
-- (void)removeItemIndex:(NSInteger)index;
+- (void)removeItemIndex:(NSUInteger)index;
 
 @end

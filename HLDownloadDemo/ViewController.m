@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "NSString+Extend.h"
 #import <HLDownload/HLDownload.h>
 #import <AVFoundation/AVFoundation.h>
 #import "HTTPServer.h"
@@ -39,11 +38,11 @@
 /*  1.http://163.com-www-letv.com/20180604/1403_6de54f23/index.m3u8
     2.http://163.com-www-letv.com/20180604/1402_1834f64c/index.m3u8
     3.http://163.com-www-letv.com/20180604/1400_105254be/index.m3u8
-    5.http://163.com-www-letv.com/20180604/1401_2c942586/index.m3u8
+    4.http://163.com-www-letv.com/20180604/1401_2c942586/index.m3u8
 */
     [self.HLM3U8Praser praseM3u8Url:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1401_2c942586/index.m3u8"] praserBlock:^(NSURL *m3u8URL, HLM3U8List *segmentList) {
         // 视频文件父目录
-        segmentList.filePath = m3u8URL.absoluteString.md5Hash;
+//        segmentList.filePath = m3u8URL.absoluteString.md5Hash;
         // 一个下载器
         self.downloader = [[HLDownLoader alloc]initWithHLM3U8List:segmentList];
         self.downloader.delegate = self;
@@ -66,7 +65,7 @@
 }
 
 - (void)play{
-    NSString *localM3u8 = [self.downloader createLocalM3U8file];
+    NSString *localM3u8 = self.downloader.localM3U8;
     NSLog(@"LocalM3U8file %@", localM3u8) ;
     if (localM3u8) {
         

@@ -14,6 +14,10 @@ static  NSInteger QueueMax = 3;
 
 @implementation HLSegmentDownLoader
 
+- (void)dealloc{
+    [self.currentSession invalidateAndCancel];
+}
+
 - (instancetype)initWithUrl:(NSString *)url andFilePathName:(NSString *)pathName andFileName:(NSString *)fileName
 {
     self = [super init];
@@ -29,6 +33,7 @@ static  NSInteger QueueMax = 3;
         NSString *pathPrefix = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,NSUserDomainMask,YES) objectAtIndex:0];
         // 拼接目录
         self.filePath = [[pathPrefix stringByAppendingPathComponent:kPathDownload] stringByAppendingPathComponent:self.filePathName];
+        NSLog(@"------ %@",self.filePath);
         // 创建目录
         BOOL isDir = NO;
         NSFileManager *fm = [NSFileManager defaultManager];
@@ -46,17 +51,29 @@ static  NSInteger QueueMax = 3;
 
 
 // 开始下载
-- (void)start
+- (BOOL)start
 {
+//    NSString *fileName = [self.filePath stringByAppendingPathComponent:self.fileName];
+//    NSFileManager *fm = [NSFileManager defaultManager];
+//    if ([fm fileExistsAtPath:fileName]) {
+//        if (self.delegate && [self.delegate respondsToSelector:@selector(segmentDownloadFinished:)])
+//        {
+//            [self.delegate segmentDownloadFinished:self];
+//        }
+//        self.status = DownloadTaskStatusStopped;
+//        return NO;
+//    }
+    
     self.downloadUrl = [self.downloadUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.downloadUrl]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.downloadUrl] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30];
     
     self.resumableTask = [self.currentSession downloadTaskWithRequest:request];
 
     [self.resumableTask resume];
     
     self.status = DownloadTaskStatusRunning;
+    return YES;
 }
 
 /**
@@ -66,7 +83,7 @@ static  NSInteger QueueMax = 3;
     if (self.partialData)
     {
         self.resumableTask = [self.currentSession downloadTaskWithResumeData:self.partialData];
-        self.status = DownloadTaskStatusStopped;
+        self.status = DownloadTaskStatusRunning;
     }
 }
 
@@ -83,6 +100,7 @@ static  NSInteger QueueMax = 3;
         [self.resumableTask cancel];
     }
     self.status = DownloadTaskStatusStopped;
+    [self.currentSession invalidateAndCancel];
 }
 
 /**
@@ -109,12 +127,19 @@ static  NSInteger QueueMax = 3;
  */
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
+    [lock lock];
+    self.status = DownloadTaskStatusSuccessed;
+
+    [self.currentSession invalidateAndCancel];
+
     // 下载完成 系统下载在tmp中
     NSError *fileManagerError = nil;
     if (self.filePath)
     {
         self.filePath = [self.filePath stringByAppendingPathComponent:self.fileName];
-        [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:self.filePath] error:&fileManagerError];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:self.filePath]) {
+            [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:self.filePath] error:&fileManagerError];
+        }
     }
     if (fileManagerError)
     {
@@ -124,6 +149,7 @@ static  NSInteger QueueMax = 3;
     {
         [self.delegate segmentDownloadFinished:self];
     }
+    [lock unlock];
 }
 
 /* 完成下载任务，无论下载成功还是失败都调用该方法 */
@@ -132,6 +158,11 @@ static  NSInteger QueueMax = 3;
 {
     if (error)
     {
+        if (error.code == NSURLErrorCancelled) {
+            self.status = DownloadTaskStatusStopped;
+        }else {
+            self.status = DownloadTaskStatusFailure;
+        }
         NSLog(@"下载失败:%@", error);
         if (self.delegate && [self.delegate respondsToSelector:@selector(segmentDownloadFailed:error:progresser:)])
         {

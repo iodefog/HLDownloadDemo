@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FDCD2B120DD3D4F008A0B26 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCD2B020DD3D4F008A0B26 /* TableViewController.m */; };
+		4FDCD2B420DD4274008A0B26 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCD2B320DD4274008A0B26 /* TableViewCell.m */; };
 		94540F18B65A6BE4B26134F8 /* libPods-HLDownloadDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 125ED912C6F59039370A6DC3 /* libPods-HLDownloadDemo.a */; };
 		C774768620DB4B320085C386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C774768520DB4B320085C386 /* AppDelegate.m */; };
 		C774768920DB4B320085C386 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C774768820DB4B320085C386 /* ViewController.m */; };
@@ -30,10 +32,8 @@
 		C77477D120DBA7550085C386 /* HLSegmentProgresser.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477C420DBA7550085C386 /* HLSegmentProgresser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C77477D220DBA7550085C386 /* HLDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477C520DBA7550085C386 /* HLDownLoader.m */; };
 		C77477D320DBA7550085C386 /* HLSegmentDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477C620DBA7550085C386 /* HLSegmentDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C77477E220DBAB320085C386 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477E020DBAB320085C386 /* NSData+Additions.m */; };
-		C77477E320DBAB320085C386 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477E120DBAB320085C386 /* NSString+Extend.m */; };
 		C77477E620DBAF290085C386 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77477E520DBAF290085C386 /* AVFoundation.framework */; };
-		C77477E920DCD3440085C386 /* HLDownloaderCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477E720DCD3440085C386 /* HLDownloaderCenter.h */; };
+		C77477E920DCD3440085C386 /* HLDownloaderCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = C77477E720DCD3440085C386 /* HLDownloaderCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C77477EA20DCD3440085C386 /* HLDownloaderCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C77477E820DCD3440085C386 /* HLDownloaderCenter.m */; };
 		F677A2BC0FD2BA29D45C2C7C /* libPods-HLDownload.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB290C98FA8A9C191B93D971 /* libPods-HLDownload.a */; };
 /* End PBXBuildFile section */
@@ -65,6 +65,10 @@
 /* Begin PBXFileReference section */
 		125ED912C6F59039370A6DC3 /* libPods-HLDownloadDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HLDownloadDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433A2455B791360A6447114 /* Pods-HLDownloadDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLDownloadDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLDownloadDemo/Pods-HLDownloadDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4FDCD2AF20DD3D4F008A0B26 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4FDCD2B020DD3D4F008A0B26 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4FDCD2B220DD4274008A0B26 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		4FDCD2B320DD4274008A0B26 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		AE6F382783FC8A17A0A07472 /* Pods-HLDownloadDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLDownloadDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLDownloadDemo/Pods-HLDownloadDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BB8FF0671DBD338748DD2B33 /* Pods-HLDownload.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLDownload.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLDownload/Pods-HLDownload.release.xcconfig"; sourceTree = "<group>"; };
 		C774768120DB4B320085C386 /* HLDownloadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLDownloadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,10 +97,6 @@
 		C77477C420DBA7550085C386 /* HLSegmentProgresser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSegmentProgresser.h; sourceTree = "<group>"; };
 		C77477C520DBA7550085C386 /* HLDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLDownLoader.m; sourceTree = "<group>"; };
 		C77477C620DBA7550085C386 /* HLSegmentDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSegmentDownLoader.h; sourceTree = "<group>"; };
-		C77477DE20DBAB320085C386 /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Additions.h"; sourceTree = "<group>"; };
-		C77477DF20DBAB320085C386 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
-		C77477E020DBAB320085C386 /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Additions.m"; sourceTree = "<group>"; };
-		C77477E120DBAB320085C386 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
 		C77477E520DBAF290085C386 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C77477E720DCD3440085C386 /* HLDownloaderCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLDownloaderCenter.h; sourceTree = "<group>"; };
 		C77477E820DCD3440085C386 /* HLDownloaderCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLDownloaderCenter.m; sourceTree = "<group>"; };
@@ -153,12 +153,15 @@
 				C774768520DB4B320085C386 /* AppDelegate.m */,
 				C774768720DB4B320085C386 /* ViewController.h */,
 				C774768820DB4B320085C386 /* ViewController.m */,
+				4FDCD2AF20DD3D4F008A0B26 /* TableViewController.h */,
+				4FDCD2B020DD3D4F008A0B26 /* TableViewController.m */,
+				4FDCD2B220DD4274008A0B26 /* TableViewCell.h */,
+				4FDCD2B320DD4274008A0B26 /* TableViewCell.m */,
 				C774768A20DB4B320085C386 /* Main.storyboard */,
 				C774768D20DB4B330085C386 /* Assets.xcassets */,
 				C774768F20DB4B330085C386 /* LaunchScreen.storyboard */,
 				C774769220DB4B330085C386 /* Info.plist */,
 				C774769320DB4B330085C386 /* main.m */,
-				C77477DD20DBAB320085C386 /* Additions */,
 			);
 			path = HLDownloadDemo;
 			sourceTree = "<group>";
@@ -190,29 +193,18 @@
 		C77477BF20DBA7550085C386 /* Download */ = {
 			isa = PBXGroup;
 			children = (
+				C77477E720DCD3440085C386 /* HLDownloaderCenter.h */,
+				C77477E820DCD3440085C386 /* HLDownloaderCenter.m */,
+				C77477C320DBA7550085C386 /* HLDownLoader.h */,
+				C77477C520DBA7550085C386 /* HLDownLoader.m */,
 				C77477C020DBA7550085C386 /* HLDownloadDelegate.h */,
 				C77477C620DBA7550085C386 /* HLSegmentDownLoader.h */,
 				C77477C220DBA7550085C386 /* HLSegmentDownLoader.m */,
 				C77477C420DBA7550085C386 /* HLSegmentProgresser.h */,
 				C77477C120DBA7550085C386 /* HLSegmentProgresser.m */,
-				C77477C320DBA7550085C386 /* HLDownLoader.h */,
-				C77477C520DBA7550085C386 /* HLDownLoader.m */,
-				C77477E720DCD3440085C386 /* HLDownloaderCenter.h */,
-				C77477E820DCD3440085C386 /* HLDownloaderCenter.m */,
 			);
 			path = Download;
 			sourceTree = "<group>";
-		};
-		C77477DD20DBAB320085C386 /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				C77477DE20DBAB320085C386 /* NSData+Additions.h */,
-				C77477E020DBAB320085C386 /* NSData+Additions.m */,
-				C77477DF20DBAB320085C386 /* NSString+Extend.h */,
-				C77477E120DBAB320085C386 /* NSString+Extend.m */,
-			);
-			path = Additions;
-			sourceTree = SOURCE_ROOT;
 		};
 		C77477E420DBAF290085C386 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -396,11 +388,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDCD2B420DD4274008A0B26 /* TableViewCell.m in Sources */,
 				C774768920DB4B320085C386 /* ViewController.m in Sources */,
+				4FDCD2B120DD3D4F008A0B26 /* TableViewController.m in Sources */,
 				C774769420DB4B330085C386 /* main.m in Sources */,
-				C77477E220DBAB320085C386 /* NSData+Additions.m in Sources */,
 				C774768620DB4B320085C386 /* AppDelegate.m in Sources */,
-				C77477E320DBAB320085C386 /* NSString+Extend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
