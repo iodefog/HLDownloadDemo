@@ -14,7 +14,7 @@
 /**
  *  片段数组
  */
-@property (nonatomic, retain) NSMutableArray *segments;
+@property (nonatomic, strong) NSMutableArray *segments;
 /**
  *  片段个数
  */

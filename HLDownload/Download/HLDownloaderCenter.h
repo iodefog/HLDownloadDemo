@@ -18,7 +18,7 @@
 
 + (instancetype)shareInstanced;
 
-- (void)addDownloadWithM3u8URL:(NSURL *)url completeBlock:(void (^)(void))completeBlock;
+- (void)addDownloadWithM3u8URL:(NSURL *)url completeBlock:(void (^)(HLDownLoader *downloader))completeBlock;
 
 
 - (void)startAll;

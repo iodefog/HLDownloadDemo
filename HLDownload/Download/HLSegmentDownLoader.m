@@ -15,7 +15,7 @@ static  NSInteger QueueMax = 3;
 @implementation HLSegmentDownLoader
 
 - (void)dealloc{
-    [self.currentSession invalidateAndCancel];
+    [_currentSession finishTasksAndInvalidate];
 }
 
 - (instancetype)initWithUrl:(NSString *)url andFilePathName:(NSString *)pathName andFileName:(NSString *)fileName
@@ -53,16 +53,16 @@ static  NSInteger QueueMax = 3;
 // 开始下载
 - (BOOL)start
 {
-//    NSString *fileName = [self.filePath stringByAppendingPathComponent:self.fileName];
-//    NSFileManager *fm = [NSFileManager defaultManager];
-//    if ([fm fileExistsAtPath:fileName]) {
-//        if (self.delegate && [self.delegate respondsToSelector:@selector(segmentDownloadFinished:)])
-//        {
-//            [self.delegate segmentDownloadFinished:self];
-//        }
-//        self.status = DownloadTaskStatusStopped;
-//        return NO;
-//    }
+    NSString *fileName = [self.filePath stringByAppendingPathComponent:self.fileName];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if ([fm fileExistsAtPath:fileName]) {
+        self.status = DownloadTaskStatusStopped;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(segmentDownloadFinished:)])
+        {
+            [self.delegate segmentDownloadFinished:self];
+        }
+        return NO;
+    }
     
     self.downloadUrl = [self.downloadUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
     

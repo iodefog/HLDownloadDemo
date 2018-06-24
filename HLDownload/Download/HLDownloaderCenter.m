@@ -45,7 +45,7 @@ static id manager = nil;
     return self;
 }
 
-- (void)addDownloadWithM3u8URL:(NSURL *)url completeBlock:(void (^)(void))completeBlock
+- (void)addDownloadWithM3u8URL:(NSURL *)url completeBlock:(void (^)(HLDownLoader *downloader))completeBlock
 {
     dispatch_async(self.m3u8RequestQueue, ^{
         HLM3U8Praser *m3u8Praser = [[HLM3U8Praser alloc] init];
@@ -54,14 +54,15 @@ static id manager = nil;
             downloader.m3u8url = m3u8URL;
             [self.downloadsArray addObject:downloader];
             
+            if (completeBlock) {
+                completeBlock(downloader);
+            }
+
             if (self.queueArray.count < HLDownLoaderTaskMAX) {
                 [self.queueArray addObject:downloader];
                 [downloader startDownload];
             }
             
-            if (completeBlock) {
-                completeBlock();
-            }
         }];
     });
 }

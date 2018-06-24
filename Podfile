@@ -16,5 +16,7 @@ target 'HLDownloadDemo' do
 
   # Pods for HLDownloadDemo
   pod 'CocoaHTTPServer'
+  # 数据存储归档
+  pod 'ArchiverEasy'
 
 end

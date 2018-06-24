@@ -1,4 +1,4 @@
-//
+
 //  HLDownLoader.m
 //  HLDownloadDemo
 //
@@ -17,6 +17,9 @@ static NSLock *downloadLock;
 @property (nonatomic, strong) NSMutableArray *isDownloadingArray;
 @property (nonatomic, strong) NSMutableArray *downloadFailArray;
 
+@property (nonatomic, strong) dispatch_queue_t dispatchQueue;
+@property (nonatomic, strong) dispatch_semaphore_t semaphore;
+
 @end
 
 @implementation HLDownLoader
@@ -33,6 +36,9 @@ static NSLock *downloadLock;
         self.isDownloadingArray = [NSMutableArray arrayWithCapacity:MAXCount];
         self.downloadFailArray = [NSMutableArray array];
         downloadLock = [[NSLock alloc] init];
+        
+        self.dispatchQueue = dispatch_queue_create("com.lhl.downloader", nil);
+        self.semaphore = dispatch_semaphore_create(1);
     }
     return  self;
 }
@@ -58,18 +64,13 @@ static NSLock *downloadLock;
                                              andFileName:fileName];
         sgDownloader.delegate = self;
         [self.downloadArray addObject:sgDownloader];
-
-        
-        if (self.isDownloadingArray.count < MAXCount) {
-            if([sgDownloader start]){
-                [self.isDownloadingArray addObject:sgDownloader];
-            };
-        }
     }
+    
+    [self downloadNext];
     
     self.state = HLDownLoaderState_Downloading;
     
-   self.localM3U8 = [self createLocalM3U8file];
+    self.localM3U8 = [self createLocalM3U8file];
 }
 
 -(void)resumeDownload
@@ -118,6 +119,48 @@ static NSLock *downloadLock;
     [downloadLock unlock];
 }
 
+- (void)downloadNext{
+
+    dispatch_async(self.dispatchQueue, ^{
+        dispatch_semaphore_wait(self.semaphore, 5);
+        NSMutableArray *tempArray = [NSMutableArray array];
+        [self.isDownloadingArray enumerateObjectsUsingBlock:^(HLSegmentDownLoader *downloader, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (downloader.status == DownloadTaskStatusSuccessed) {
+                [tempArray addObject:downloader];
+            }
+        }];
+        // 移除已经完成的
+        [self.isDownloadingArray removeObjectsInArray:tempArray];
+        
+        
+        [self.downloadArray enumerateObjectsUsingBlock:^(HLSegmentDownLoader *downloader, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (self.isDownloadingArray.count < MAXCount) {
+                [self.isDownloadingArray addObject:downloader];
+            }
+            else {
+                *stop = YES;
+            }
+        }];
+        // 移除开始任务的
+        [self.downloadArray removeObjectsInArray:self.isDownloadingArray];
+        
+        [tempArray removeAllObjects];
+        [self.isDownloadingArray enumerateObjectsUsingBlock:^(HLSegmentDownLoader *downloader, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (downloader.status == DownloadTaskStatusStopped &&  ![downloader start]) {
+                [tempArray addObject:downloader];
+            }
+        }];
+        // 移除本地已经下载完的
+        [self.isDownloadingArray removeObjectsInArray:tempArray];
+        
+        if (self.downloadArray.count > 0 && self.isDownloadingArray.count < MAXCount) {
+            [self downloadNext];
+        }
+        
+        dispatch_semaphore_signal(self.semaphore);
+    });
+}
+
 
 #pragma mark - SegmentHLDownloadDelegate
 
@@ -125,19 +168,8 @@ static NSLock *downloadLock;
 -(void)segmentDownloadFinished:(HLSegmentDownLoader *)request
 {
     NSLog(@"a segment Download Finished");
-    [self.downloadArray removeObject:request];
-    [self.isDownloadingArray removeObject:request];
-
-    for (HLSegmentDownLoader *downloader in self.downloadArray) {
-        if (self.isDownloadingArray.count < MAXCount) {
-            if (![self.isDownloadingArray containsObject:downloader]) {
-                [downloader start];
-                [self.isDownloadingArray addObject:downloader];
-            }
-        }else {
-            break;
-        }
-    }
+    
+    [self downloadNext];
     
     if([self.downloadArray count] == 0)
     {
@@ -146,6 +178,7 @@ static NSLock *downloadLock;
             [self.downloadFailArray removeAllObjects];
             return;
         }
+        
         self.progress = 1;
         self.downloadArray = nil;
         NSLog(@"-----100%%-------all the segments downloaded. video download finished");
@@ -165,6 +198,13 @@ static NSLock *downloadLock;
         self.progress = 0;
         self.writtenSize = 0.0;
     }else {
+        
+        double progress = (self.playlist.segments.count - self.downloadArray.count)/(float)self.playlist.segments.count;
+        self.progress = progress;
+        if (self.progress > 1) {
+            self.progress = 1.0;
+        }
+        
         if (self.delegate && [self.delegate respondsToSelector:@selector(downloader:Progress:)])
         {
             [self.delegate downloader:self Progress:self.progress];
@@ -196,27 +236,11 @@ static NSLock *downloadLock;
 -(void)segmentDownloadFailed:(HLSegmentDownLoader *)request error:(NSError *)error progresser:(HLSegmentProgresser *)progresser
 {
     NSLog(@"segmentDownloadFailed error =%@", error);
-    [downloadLock lock];
     
-    [self.downloadFailArray addObject:request];
-    [self.downloadArray removeObject:request];
-    [self.isDownloadingArray removeObject:request];
+    [self downloadNext];
     
-    for (HLSegmentDownLoader *downloader in self.downloadArray) {
-        if (self.isDownloadingArray.count < MAXCount) {
-            if (![self.isDownloadingArray containsObject:downloader]) {
-                [downloader start];
-                [self.isDownloadingArray addObject:downloader];
-            }
-        }else {
-            break;
-        }
-    }
-    [downloadLock unlock];
-
-
     if (error.code != NSURLErrorCancelled) { // 取消
-//        [request start];
+        //        [request start];
     }
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(downloader:Progress:)])
@@ -282,4 +306,5 @@ static NSLock *downloadLock;
 }
 
 @end
+
 

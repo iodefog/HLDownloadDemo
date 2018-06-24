@@ -29,19 +29,19 @@
      3.http://163.com-www-letv.com/20180604/1400_105254be/index.m3u8
      4.http://163.com-www-letv.com/20180604/1401_2c942586/index.m3u8
      */
-    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1403_6de54f23/index.m3u8"] completeBlock:^{
+    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1403_6de54f23/index.m3u8"] completeBlock:^(HLDownLoader *downloader){
         [self reloadTableData];
     }];
-//    
-//    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1402_1834f64c/index.m3u8"] completeBlock:^{
-//        [self reloadTableData];
-//    }];
-//    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1400_105254be/index.m3u8"] completeBlock:^{
-//        [self reloadTableData];
-//    }];
-//    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1401_2c942586/index.m3u8"] completeBlock:^{
-//        [self reloadTableData];
-//    }];
+    
+    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1402_1834f64c/index.m3u8"] completeBlock:^(HLDownLoader *downloader){
+        [self reloadTableData];
+    }];
+    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1400_105254be/index.m3u8"] completeBlock:^(HLDownLoader *downloader){
+        [self reloadTableData];
+    }];
+    [[HLDownloaderCenter shareInstanced] addDownloadWithM3u8URL:[NSURL URLWithString:@"http://163.com-www-letv.com/20180604/1401_2c942586/index.m3u8"] completeBlock:^(HLDownLoader *downloader){
+        [self reloadTableData];
+    }];
 }
 
 - (void)reloadTableData{

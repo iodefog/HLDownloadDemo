@@ -14,8 +14,8 @@
 
 typedef enum
 {
-    DownloadTaskStatusRunning = 0,
-    DownloadTaskStatusStopped = 1,
+    DownloadTaskStatusStopped = 0,
+    DownloadTaskStatusRunning = 1,
     DownloadTaskStatusFailure = 2,
     DownloadTaskStatusSuccessed = 3,
 }DownloadTaskStatus;
